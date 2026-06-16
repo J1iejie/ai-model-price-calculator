@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI API Price Calculator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="intro">
+        <div>
+          <p class="eyebrow">Queried on June 16, 2026</p>
+          <h1>AI API Price Calculator</h1>
+          <p class="lede">
+            Compare estimated monthly token spend across popular overseas AI APIs.
+          </p>
+        </div>
+        <a class="source-link" href="#sources">Sources</a>
+      </section>
+
+      <section class="calculator" aria-label="Usage calculator">
+        <form class="controls" id="usageForm">
+          <label>
+            <span>Monthly requests</span>
+            <input id="requests" type="number" min="1" step="1000" value="100000" />
+          </label>
+          <label>
+            <span>Average input tokens</span>
+            <input id="inputTokens" type="number" min="1" step="100" value="800" />
+          </label>
+          <label>
+            <span>Average output tokens</span>
+            <input id="outputTokens" type="number" min="1" step="100" value="300" />
+          </label>
+          <label>
+            <span>Cached input share</span>
+            <input id="cacheShare" type="range" min="0" max="100" value="0" />
+            <output id="cacheValue">0%</output>
+          </label>
+        </form>
+
+        <div class="summary" aria-live="polite">
+          <span>Estimated total tokens</span>
+          <strong id="totalTokens">110.0M</strong>
+        </div>
+      </section>
+
+      <section class="results" aria-label="Model price comparison">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Provider</th>
+                <th>Model</th>
+                <th>Input / 1M</th>
+                <th>Output / 1M</th>
+                <th>Monthly estimate</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="notes" id="sources">
+        <h2>Official Sources</h2>
+        <ul>
+          <li>
+            OpenAI API pricing:
+            <a href="https://openai.com/api/pricing/" target="_blank" rel="noreferrer">openai.com/api/pricing</a>
+          </li>
+          <li>
+            Anthropic Claude pricing:
+            <a href="https://docs.anthropic.com/en/docs/about-claude/pricing" target="_blank" rel="noreferrer">docs.anthropic.com</a>
+          </li>
+          <li>
+            Google Gemini API pricing:
+            <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noreferrer">ai.google.dev</a>
+          </li>
+        </ul>
+        <p>
+          Prices are stored as USD per 1M tokens. Batch discounts, regional taxes,
+          image/audio/video pricing, prompt cache write fees, and provider-specific
+          free tiers are not included.
+        </p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
