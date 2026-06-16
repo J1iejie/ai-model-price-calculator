@@ -1,39 +1,41 @@
-# Submission Document
+# 提交文档
 
-## Part 0: Digital Identity
+## 第 0 部分：数字身份
 
-- GitHub profile: TODO
-- Blog / technical writing: TODO
-- X / technical community account: TODO
-- Best work link: TODO
+- GitHub 主页：TODO
+- 个人博客 / 技术写作主页：TODO
+- X（Twitter）或其他活跃技术社区账号：TODO
+- 最拿得出手的作品链接：TODO
 
-## Part 1: Core Project
+## 第 1 部分：核心项目
 
-- Live URL: TODO
-- GitHub repository: TODO
-- Project direction: Direction A, AI model price calculator.
+- 线上 URL：TODO
+- GitHub 公开仓库：TODO
+- 项目方向：方向 A，AI 模型价格计算器。
 
-## Part 2: AI Collaboration Record
+这个项目用于估算 OpenAI、Anthropic 和 Google Gemini 等海外 AI API 的月度 token 成本。用户输入每月请求数、平均输入 token、平均输出 token 和缓存输入占比后，页面会自动计算不同模型的大致月度费用，并按价格从低到高排序。
 
-1. Used ChatGPT/Codex to break down the assignment into a delivery checklist.
-2. Used AI to scaffold the static page structure, responsive layout, and README.
-3. Used AI to compare implementation options and choose a no-backend static site.
-4. Used AI to draft the retrospective article and self-review.
-5. AI gave uncertain / possibly stale pricing data at first.
-6. I fixed it by checking official pricing pages and recording the query date.
-7. I manually verified the calculator formula with simple token examples.
-8. I checked mobile layout so table text does not overflow the page.
-9. I am still not fully certain the cache simplification matches every provider's billing edge case.
-10. I would re-check all prices before using this calculator for real budget decisions.
+## 第 2 部分：AI 协作记录
 
-## Part 3: Retrospective Blog
+1. 使用 ChatGPT / Codex 拆解招聘题目，整理成可交付清单。
+2. 使用 AI 生成静态页面初版结构，包括输入表单、结果表格和数据来源区域。
+3. 使用 AI 辅助设计移动端布局，避免文字溢出和表格挤压。
+4. 使用 AI 起草 README、复盘文章和提交文档模板。
+5. AI 一开始给出的部分价格数据不确定，可能来自旧版本模型。
+6. 我通过打开官方价格页面核对模型名称和价格，发现并修正了这个问题。
+7. 我用简单 token 示例手动检查了月度费用计算公式。
+8. 我检查了手机宽度下的页面布局，确保表格不会撑破页面。
+9. 我现在仍不完全确定各平台缓存计费规则是否能被统一滑块准确表达。
+10. 如果正式用于预算，我会在提交前重新核对所有官方价格页面。
 
-- Blog article link: TODO
+## 第 3 部分：复盘博客
 
-## Part 4: Five-Line Self Review
+- 博客文章链接：TODO
 
-- Most satisfying part: The tool is simple, deployed as a static page, and directly solves a real cost-estimation problem.
-- Least confident part: Pricing rules are simplified, especially around cache and provider-specific discounts.
-- With 8 more hours: I would add CSV export, scenario presets, and a separate JSON pricing data file.
-- Longest blocker: Mobile table layout and pricing verification, about TODO minutes.
-- Support I would want in week one: Clear examples of previous internal tools, preferred deployment workflow, and review expectations.
+## 第 4 部分：5 行自评
+
+- 最满意的一点：工具足够简单，部署成静态页面即可访问，并且解决了真实的 AI API 成本估算问题。
+- 最心虚的一点：不同厂商的缓存、折扣和特殊计费规则被简化了。
+- 再给我 8 小时：我会增加 CSV 导出、场景预设，并把价格数据拆成独立 JSON 文件。
+- 卡得最久的地方：移动端表格布局和价格数据核对，大约 TODO 分钟。
+- 如果入职第一周做类似任务：我希望团队提供内部工具示例、常用部署流程和代码评审标准。
