@@ -65,8 +65,8 @@ function readNumber(id) {
 }
 
 function formatMillions(value) {
-  if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(2)}B`;
-  return `${(value / 1_000_000).toFixed(1)}M`;
+  if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(2)} 十亿`;
+  return `${(value / 1_000_000).toFixed(1)} 百万`;
 }
 
 function calculate() {
@@ -94,12 +94,12 @@ function calculate() {
 
   resultsBody.innerHTML = rows
     .map((item, index) => {
-      const best = index === 0 ? '<span class="tag">Lowest</span>' : "";
+      const best = index === 0 ? '<span class="tag">最低</span>' : "";
       return `
         <tr>
           <td class="provider">${item.provider}${best}</td>
           <td class="model">${item.model}</td>
-          <td>${currency.format(item.input)} cached ${currency.format(item.cachedInput)}</td>
+          <td>${currency.format(item.input)}，缓存 ${currency.format(item.cachedInput)}</td>
           <td>${currency.format(item.output)}</td>
           <td class="cost">${currency.format(item.cost)}</td>
         </tr>

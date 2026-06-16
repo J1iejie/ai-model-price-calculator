@@ -1,61 +1,61 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI API Price Calculator</title>
+    <title>AI API 价格计算器</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="shell">
       <section class="intro">
         <div>
-          <p class="eyebrow">Queried on June 16, 2026</p>
-          <h1>AI API Price Calculator</h1>
+          <p class="eyebrow">价格查询日期：2026 年 6 月 16 日</p>
+          <h1>AI API 价格计算器</h1>
           <p class="lede">
-            Compare estimated monthly token spend across popular overseas AI APIs.
+            输入请求量和平均 token 用量，快速比较海外主流 AI API 的月度成本。
           </p>
         </div>
-        <a class="source-link" href="#sources">Sources</a>
+        <a class="source-link" href="#sources">数据来源</a>
       </section>
 
-      <section class="calculator" aria-label="Usage calculator">
+      <section class="calculator" aria-label="用量计算器">
         <form class="controls" id="usageForm">
           <label>
-            <span>Monthly requests</span>
+            <span>每月请求数</span>
             <input id="requests" type="number" min="1" step="1000" value="100000" />
           </label>
           <label>
-            <span>Average input tokens</span>
+            <span>平均输入 token</span>
             <input id="inputTokens" type="number" min="1" step="100" value="800" />
           </label>
           <label>
-            <span>Average output tokens</span>
+            <span>平均输出 token</span>
             <input id="outputTokens" type="number" min="1" step="100" value="300" />
           </label>
           <label>
-            <span>Cached input share</span>
+            <span>缓存输入占比</span>
             <input id="cacheShare" type="range" min="0" max="100" value="0" />
             <output id="cacheValue">0%</output>
           </label>
         </form>
 
         <div class="summary" aria-live="polite">
-          <span>Estimated total tokens</span>
-          <strong id="totalTokens">110.0M</strong>
+          <span>预计总 token</span>
+          <strong id="totalTokens">110.0 百万</strong>
         </div>
       </section>
 
-      <section class="results" aria-label="Model price comparison">
+      <section class="results" aria-label="模型价格对比">
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Provider</th>
-                <th>Model</th>
-                <th>Input / 1M</th>
-                <th>Output / 1M</th>
-                <th>Monthly estimate</th>
+                <th>服务商</th>
+                <th>模型</th>
+                <th>输入 / 100 万 token</th>
+                <th>输出 / 100 万 token</th>
+                <th>月度估算</th>
               </tr>
             </thead>
             <tbody id="resultsBody"></tbody>
@@ -64,25 +64,24 @@
       </section>
 
       <section class="notes" id="sources">
-        <h2>Official Sources</h2>
+        <h2>官方数据来源</h2>
         <ul>
           <li>
-            OpenAI API pricing:
+            OpenAI API 价格：
             <a href="https://openai.com/api/pricing/" target="_blank" rel="noreferrer">openai.com/api/pricing</a>
           </li>
           <li>
-            Anthropic Claude pricing:
+            Anthropic Claude 价格：
             <a href="https://docs.anthropic.com/en/docs/about-claude/pricing" target="_blank" rel="noreferrer">docs.anthropic.com</a>
           </li>
           <li>
-            Google Gemini API pricing:
+            Google Gemini API 价格：
             <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noreferrer">ai.google.dev</a>
           </li>
         </ul>
         <p>
-          Prices are stored as USD per 1M tokens. Batch discounts, regional taxes,
-          image/audio/video pricing, prompt cache write fees, and provider-specific
-          free tiers are not included.
+          页面中的价格按美元 / 100 万 token 记录。估算暂未包含批量折扣、地区税费、
+          图片/音频/视频计费、提示词缓存写入费用，以及各平台免费额度。
         </p>
       </section>
     </main>
